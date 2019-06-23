@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Team1Tiles from '../components/team1tiles';
+import RenderTiles from '../components/renderTiles';
+import RenderChosenTile from '../components/renderChosenTile';
+
 function MainPage() {
     return (
         <div className="App">
@@ -9,11 +13,7 @@ function MainPage() {
           <p>
             Below is where I should put some dice stuff 
           </p>
-          <ul>
-            <li>results 1</li>
-            <li>results 2</li>
-            <li>results 3</li>
-          </ul>
+
           <table>
             <tbody>
               <tr>
@@ -26,7 +26,7 @@ function MainPage() {
               </tr>
               <tr>
                 <td>
-                   1 2 3 5 6 7 8 9 10
+                   <RenderTiles />
                 </td>
                 <td>
                   4 5 6 8 9 10 11 12
@@ -42,6 +42,7 @@ function MainPage() {
               </tr>
             </tbody>
           </table>
+          <RenderChosenTile />
         </div>
       );
 }
