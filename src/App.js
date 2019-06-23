@@ -5,20 +5,17 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Mer Dice Pratice round
+      </h1>
+      <p>
+        Below is where I should put some dice stuff 
+      </p>
+      <ul>
+        <li>results 1</li>
+        <li>results 2</li>
+        <li>results 3</li>
+      </ul>
     </div>
   );
 }
