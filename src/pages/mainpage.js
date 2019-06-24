@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Team1Tiles from '../components/team1tiles';
 import RenderTiles from '../components/renderTiles';
 import RenderChosenTile from '../components/renderChosenTile';
 
@@ -35,6 +34,7 @@ function MainPage() {
             </tbody>
           </table>
           <RenderChosenTile />
+          <p>the</p>
         </div>
       );
 }
