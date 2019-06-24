@@ -32,14 +32,6 @@ function MainPage() {
                   4 5 6 8 9 10 11 12
                 </td>
               </tr>
-              <tr>
-                  <td>
-                      abcd
-                  </td>
-                  <td>
-                      efgh
-                  </td>
-              </tr>
             </tbody>
           </table>
           <RenderChosenTile />

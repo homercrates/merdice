@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Team1Tiles from './team1tiles'
 
 
 const team = Team1Tiles();
 function RenderTiles() {
+    const [currentTile, setCurrentTile] = useState([1,1]);
 
     return (
         <div>
             {   
                 team.map( (tile, index) => {
                     const tileGrabbed = function() {
-                        console.log(tile[1]);
+                        setCurrentTile(tile);
                     }
                     return (
                         <div key={index} onClick={tileGrabbed}>
@@ -21,6 +22,7 @@ function RenderTiles() {
                 })
             
             }
+            <p>{currentTile}</p>
         </div>
     )
 }

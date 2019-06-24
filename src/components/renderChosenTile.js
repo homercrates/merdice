@@ -1,8 +1,13 @@
 import React from 'react';
 
-function RenderChosenTile() {
+import RenderTiles from './renderTiles';
+
+
+function RenderChosenTile(props) {
     return (
-        <p> tile picked </p>
+        <div>
+            <p> tile picked </p>
+        </div>
     )
 }
 
