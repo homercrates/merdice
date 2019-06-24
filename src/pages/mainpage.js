@@ -2,6 +2,7 @@ import React from 'react';
 
 import RenderTiles from '../components/renderTiles';
 import RenderChosenTile from '../components/renderChosenTile';
+import DiceComponent from '../components/diceComponent';
 
 function MainPage() {
     return (
@@ -35,6 +36,7 @@ function MainPage() {
           </table>
           <RenderChosenTile />
           <p>the</p>
+          <DiceComponent />
         </div>
       );
 }
