@@ -19,7 +19,7 @@ const DiceComponent = () => {
                 <img src={firstDieImage} className="die" alt="Die one" />
                 <img src={secondDieImage} className="die" alt="Die two" />
             </div>
-            <span>{firstDieResult + secondDieResult}</span>
+            <span>total: {firstDieResult + secondDieResult}</span>
             <button className="button" onClick={rollDice}>Roll</button>
         </div>
     )

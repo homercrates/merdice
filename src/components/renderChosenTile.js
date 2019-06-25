@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import RenderTiles from './renderTiles';;
+import RenderTiles from './renderTiles';
+;
 
 const RenderChosenTile = () => {
+
     
     return (
         <div>
             <p> tile picked </p>
+            
         </div>
     )
 }
