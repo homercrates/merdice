@@ -33,10 +33,14 @@ function RenderTiles() {
     }
 
     const adding = () => {
-        return[
-            player1Hand.filter(hand => !hand.id)
-        ],
-        setPlayer1Hand(...player1Hand);
+        let newHand = '';
+        return (
+           player1Hand.filter(newHand => newHand.id !== currentTile),
+           console.log('cuurent tile tp pull:' + currentTile),
+           console.log('hand:' + player1Hand),
+           console.log(newHand)
+           // trying to get a point where i ca filter out a target
+        ) 
     }
 
     useEffect(() => {
