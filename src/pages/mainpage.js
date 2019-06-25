@@ -29,7 +29,7 @@ function MainPage() {
                    <RenderTiles />
                 </td>
                 <td>
-                  4 5 6 8 9 10 11 12
+                  <p>1122442424</p>
                 </td>
               </tr>
             </tbody>

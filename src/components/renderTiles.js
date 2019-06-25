@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-import Team1Tiles from './team1tiles'
-
-
-const team = Team1Tiles();
 
 function RenderTiles() {
+    const [player1Hand, setPlayer1Hand] = useState([[1,1],[1,2],[1,3],[2,1],[2,2],[2,3],[3,1],[3,2],[3,3]]);
+    const [player2Hand, setPlayer2Hand] = useState([1,1],[1,2],[1,3],[2,1],[2,2],[2,3],[3,1],[3,2],[3,3]);
     const [currentTile, setCurrentTile] = useState([1,1]);
     const [chosenPartTile, setChosenPartTile] = useState(0);
     const [currentPlayer, setCurrentPlayer] = useState('player1');
@@ -15,12 +13,31 @@ function RenderTiles() {
     const [timer, setTimer] = useState(0);
 
     const nextPhase = () => {    
-        (phase < 4) ? setPhase(phase + 1) : setPhase(1);
+        (phase < 4) 
+            ? setPhase(phase + 1) 
+            : newRound();
         console.log(phase);
-    }; 
+    };
 
+    const newRound = () => {
+        setPhase(1);
+        startingPlayer == 'player1' 
+            ? setStartingPlayer('player2') 
+            : setStartingPlayer('player1');
+        console.log('this is currentTile id' + currentTile);
+        adding();
+        //setPlayer1Hand(...player1Hand)
+        // left off here  trying to get it to filter out the current tile so i can delete the used tile
+        // invovled wit addin()  maybe what i want is a switch satement here
+        // look into a switch statement
+    }
 
-
+    const adding = () => {
+        return[
+            player1Hand.filter(hand => !hand.id)
+        ],
+        setPlayer1Hand(...player1Hand);
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -32,7 +49,7 @@ function RenderTiles() {
     return (
         <div>
             {   
-                team.map( (tile, index) => {
+                player1Hand.map( (tile, index) => {
                     const tileGrabbed = function() {
                         setCurrentTile(tile);
                     }
@@ -72,6 +89,7 @@ function RenderTiles() {
                     <p>tile chosen: {currentTile}</p>
                     <button className="button" onClick={nextPhase}>Submit Move</button>
                     <p>current phase: {phase}</p>
+                    <p>current starting player: {startingPlayer}</p>
                 </div>
                 
             </div>
