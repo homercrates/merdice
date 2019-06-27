@@ -1,7 +1,6 @@
 import React from 'react';
 
 import RenderTiles from '../components/renderTiles';
-import RenderChosenTile from '../components/renderChosenTile';
 import DiceComponent from '../components/diceComponent';
 
 function MainPage() {
@@ -13,11 +12,7 @@ function MainPage() {
           <p>
             Below is where I should put some dice stuff 
           </p>
-
-
           <RenderTiles />
-
-          <RenderChosenTile />
           <p>the</p>
           <DiceComponent />
         </div>
