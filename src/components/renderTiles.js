@@ -89,7 +89,7 @@ function RenderTiles() {
                             player 1
                         </th>
                         <th>
-                            
+                            info
                         </th>
                         <th>
                             player2
@@ -113,6 +113,13 @@ function RenderTiles() {
                                 })
                             
                             }
+                        </td>
+                        <td>
+                            <div>
+                                <button className="button" onClick={nextPhase}>Submit Move</button>
+                                <p>current phase: {phase}</p>
+                                <p>current Players turn: {currentPlayerIs1} </p>
+                            </div>
                         </td>
                         <td>
                             {   
@@ -152,6 +159,12 @@ function RenderTiles() {
                                     )         
                                 })
                             }
+                        </td>
+                        <td>
+                            <div>
+                                <p> player 1 Move: {chosenPartTile1}</p>
+                                <p> player 2 Move: {chosenPartTile2}</p>
+                            </div>
                         </td>
                         <td>
                             <p> current tile {currentTile2}</p>
