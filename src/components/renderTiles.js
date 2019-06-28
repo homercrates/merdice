@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 
 
 function RenderTiles() {
@@ -11,6 +11,12 @@ function RenderTiles() {
     const [currentPlayerIs1, setCurrentPlayerIs1] = useState('player 1');
     const [phase, setPhase] = useState(1);
     const [chose, setChose] = useState(false);
+    const [advantage1, setAdvantage1] = useState(false);
+    const [advantage2, setAdvantage2] = useState(false);
+    const [p1Tile, setP1Tile] = useState(true);
+    const [p2Tile, setP2Tile] = useState(false);
+    const [p1Part, setP1Part] = useState(false);
+    const [p2Part, setP2Part] = useState(false);
 
     let newHand;
     const nextPhase = () => {
@@ -20,44 +26,62 @@ function RenderTiles() {
                 setPlayer1Hand(newHand);
                 setChose(!chose);
                 setPhase(2);
+                setP2Tile(true);
+                setP1Tile(false);
                 setCurrentPlayerIs1('player 2');
                 break;
             case 2:
                 newHand = player2Hand.filter(hand => hand !== currentTile2) 
                 setPlayer2Hand(newHand);
                 setPhase(3);
+                setP2Tile(false);
+                setP2Part(true);
                 setCurrentPlayerIs1('player 2');
                 break;
             case 3:
                 setPhase(4);
+                setP2Part(false);
+                setP1Part(true);
                 setCurrentPlayerIs1('player 1');
                 break;
             case 4:
                 setCurrentPlayerIs1('player 2');
                 checkWin();
+                checkGameOver();
                 setPhase(5);
+                setP1Part(false);
+                setP2Tile(true);
                 break;
             case 5:
                 newHand = player2Hand.filter(hand => hand !== currentTile2);
                 setPlayer2Hand(newHand);
                 setChose(!chose);
                 setPhase(6);
+                setP2Tile(false);
+                setP1Tile(true);
                 setCurrentPlayerIs1('player 1');
                 break;
             case 6:
                 newHand = player1Hand.filter(hand => hand !== currentTile1) 
                 setPlayer1Hand(newHand);
                 setPhase(7);
+                setP1Tile(false);
+                setP1Part(true);
                 setCurrentPlayerIs1('player 2');
                 break;
             case 7:
                 setPhase(8);
+                setP1Part(false);
+                setP2Part(true);
                 setCurrentPlayerIs1('player 2');
                 break;
             case 8:
                 setCurrentPlayerIs1('player 1');
                 checkWin();
+                checkGameOver();
                 setPhase(1);
+                setP2Part(false);
+                setP1Tile(true);
                 break;
             default:
                 console.log('default');
@@ -65,19 +89,36 @@ function RenderTiles() {
     }
 
     const checkWin = () => {
-        return (chosenPartTile1 === 1 && chosenPartTile2 === 2 
+        if (chosenPartTile1 === 1 && chosenPartTile2 === 2 
             || chosenPartTile1 === 2 && chosenPartTile2 === 3
-            || chosenPartTile1 === 3 && chosenPartTile2 === 1) 
-            ? 
-                console.log('player 2 wins') 
-            : 
-            (chosenPartTile2 === 1 && chosenPartTile1 === 2 
-                || chosenPartTile2 === 2 && chosenPartTile1 === 3
-                || chosenPartTile2 === 3 && chosenPartTile1 === 1) 
-                ?
-                    console.log('player 1 wins')
-                :
-                    console.log('its a tie');
+            || chosenPartTile1 === 3 && chosenPartTile2 === 1) {
+                if (advantage2) {
+                    console.log('player 2 wins');
+                    console.log('player 2 won the game');
+                } else {
+                    setAdvantage2(true);
+                    setAdvantage1(false);
+                    console.log('player 2 won this round');
+                }
+        } else if (chosenPartTile2 === 1 && chosenPartTile1 === 2 
+            || chosenPartTile2 === 2 && chosenPartTile1 === 3
+            || chosenPartTile2 === 3 && chosenPartTile1 === 1) {
+                if (advantage1) {
+                    console.log('player 1 wins');
+                    console.log('player 1 won the game');
+                } else {
+                    setAdvantage1(true);
+                    setAdvantage2(false);
+                    console.log('player 1 won this round');
+                    }
+        } else {
+            console.log('draw match')
+        }
+
+    }
+
+    const checkGameOver = () => {
+        return 
     }
 
     return (
@@ -85,29 +126,33 @@ function RenderTiles() {
             <table>
                 <thead>
                     <tr>
-                        <th>
+                        <th className={advantage1 ? "outlineAdv" : null}>
                             player 1
                         </th>
                         <th>
                             info
                         </th>
-                        <th>
+                        <th className={advantage2 ? "outlineAdv" : null}>
                             player2
                         </th>                       
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                        <td className={p1Tile ? "outlineMove" : null}>
                             {   
                                 player1Hand.map( (tile, index) => {
                                     const tileGrabbed = function() {
                                         return (chose) ? null : setCurrentTile1(tile);
-                                        //setCurrentTile1(tile);
                                     }
+                                    const mainTileImg = require(`../assets/${tile[0]}.png`);
+                                    const mainTileImg2 = require(`../assets/${tile[1]}.png`);
                                     return (
                                         <div key={index} onClick={tileGrabbed}>
-                                            <p>{tile}</p>
+                                            <div>
+                                                <img src={mainTileImg} className="tile" alt="Tiles" height="40vh"/> 
+                                                <img src={mainTileImg2} className="tile" alt="Tiles" height="40vh"/> 
+                                            </div>
                                         </div>
                                     )
                                 })
@@ -116,21 +161,24 @@ function RenderTiles() {
                         </td>
                         <td>
                             <div>
-                                <button className="button" onClick={nextPhase}>Submit Move</button>
-                                <p>current phase: {phase}</p>
+                                <div className="button" onClick={nextPhase}>Submit Move</div>
                                 <p>current Players turn: {currentPlayerIs1} </p>
                             </div>
                         </td>
-                        <td>
+                        <td className={p2Tile ? "outlineMove" : null}>
                             {   
                                 player2Hand.map( (tile, index) => {
                                     const tileGrabbed = function() {
                                         return (chose) ? setCurrentTile2(tile) : null;
-                                        //setCurrentTile2(tile);
                                     }
+                                    const mainTileImg = require(`../assets/${tile[0]}.png`);
+                                    const mainTileImg2 = require(`../assets/${tile[1]}.png`);
                                     return (
                                         <div key={index} onClick={tileGrabbed}>
-                                            <p>{tile}</p>
+                                            <div>
+                                            <img src={mainTileImg} className="tile" alt="Tiles" height="40vh"/> 
+                                            <img src={mainTileImg2} className="tile" alt="Tiles" height="40vh"/> 
+                                            </div>
                                         </div>
                                     )
                                 })
@@ -139,8 +187,7 @@ function RenderTiles() {
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <p> current tile {currentTile1}</p>
+                        <td className={p1Part ? "outlineMove" : null}>
                             {
                                 currentTile1.map( (tilePart, index) => {
                                     const chosePart = () => {
@@ -150,11 +197,8 @@ function RenderTiles() {
                                     return (
                                         <div>
                                             <div key={index} onClick={chosePart}>
-                                                {tilePart}
                                                 <img src={chosenPartTile} className="die" alt="Die one" />
                                             </div>
-                                            <p>Chosen Part</p>
-                                            {tilePart}
                                         </div>
                                     )         
                                 })
@@ -166,8 +210,7 @@ function RenderTiles() {
                                 <p> player 2 Move: {chosenPartTile2}</p>
                             </div>
                         </td>
-                        <td>
-                            <p> current tile {currentTile2}</p>
+                        <td className={p2Part ? "outlineMove" : null}>
                             {
                                 currentTile2.map( (tilePart, index) => {
                                     const chosePart = () => {
@@ -177,11 +220,8 @@ function RenderTiles() {
                                     return (
                                         <div>
                                             <div key={index} onClick={chosePart}>
-                                                {tilePart}
                                                 <img src={chosenPartTile} className="die" alt="Die one" />
                                             </div>
-                                            <p>Chosen Part</p>
-                                            {tilePart}
                                         </div>
                                     )         
                                 })
@@ -190,19 +230,10 @@ function RenderTiles() {
                     </tr>
                 </tbody>
             </table>
-            <div>
-
-                <div>
-                    <p> player 1 Move: {chosenPartTile1}</p>
-                    <p> player 2 Move: {chosenPartTile2}</p>
-                    <button className="button" onClick={nextPhase}>Submit Move</button>
-                    <p>current phase: {phase}</p>
-                    <p>current Players turn: {currentPlayerIs1} </p>
-                </div>
-                
-            </div>
         </div>
     )
 }
 
+
 export default RenderTiles;
+

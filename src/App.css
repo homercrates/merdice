@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -30,4 +24,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+.DiceBoard {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color: #111111;
+}
+
+.outlineAdv {
+  border: 2px solid #282c34;
+  outline-style: double;
+  outline-color: rgb(163, 75, 214);
+}
+
+.outlineMove {
+  border: 2px solid #14429c;
 }

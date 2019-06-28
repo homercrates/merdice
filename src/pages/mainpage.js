@@ -7,14 +7,11 @@ function MainPage() {
     return (
         <div className="App">
           <h1>
-            Mer Dice Pratice round
+            Dice Fu
           </h1>
-          <p>
-            Below is where I should put some dice stuff 
-          </p>
-          <RenderTiles />
-          <p>the</p>
-          <DiceComponent />
+          <div className="DiceBoard">
+            <RenderTiles />
+          </div>
         </div>
       );
 }
