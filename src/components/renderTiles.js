@@ -161,7 +161,7 @@ function RenderTiles() {
                         </td>
                         <td>
                             <div>
-                                <div className="button" onClick={nextPhase}>Submit Move</div>
+                                <div className="submitBtn" onClick={nextPhase}>Submit Move</div>
                                 <p>current Players turn: {currentPlayerIs1} </p>
                             </div>
                         </td>

@@ -40,5 +40,22 @@
 }
 
 .outlineMove {
-  border: 2px solid #14429c;
+  border: 2px solid #54008b;
+  box-shadow: 0 0 5vh -4px rgba(69, 11, 122, 0.603);
+}
+
+.submitBtn {
+  display:inline-block;
+  color:#444;
+  border:1px solid #CCC;
+  background:#fff;
+  box-shadow: 0 0 1vh -1px rgba(0,0,0,0.2);
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 2vh;
+  text-align: center;
+}
+.submitBtn:active {
+  color:red;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
 }
