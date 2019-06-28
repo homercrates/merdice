@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Dice Fu **WIP**  **react JS **
+# Dice Fu 
+##WIP  react JS 
 
 ## have a few more tweaks to make Work In Progress
 
