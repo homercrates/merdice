@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## I have a few more tweaks to make Work In Progress
 
 ## dice / domino style game meant to represent a king fu type fight
-Grab beats Block.  Block beats Strike, Stike beats Grab
+Grab beats Block.  Block beats Strike, Stike beats Grab.
 It is too simulate the flow of a series of strikes and reactions.
 A series of attacks and counters that flow in a Martial Arts match.
 
