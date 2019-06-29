@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/merdice/static/css/main.03df00fc.chunk.css",
-    "main.js": "/merdice/static/js/main.d25140c3.chunk.js",
-    "main.js.map": "/merdice/static/js/main.d25140c3.chunk.js.map",
+    "main.js": "/merdice/static/js/main.bfc7944a.chunk.js",
+    "main.js.map": "/merdice/static/js/main.bfc7944a.chunk.js.map",
     "runtime~main.js": "/merdice/static/js/runtime~main.1a1c9b5d.js",
     "runtime~main.js.map": "/merdice/static/js/runtime~main.1a1c9b5d.js.map",
     "static/js/2.2ed87113.chunk.js": "/merdice/static/js/2.2ed87113.chunk.js",
     "static/js/2.2ed87113.chunk.js.map": "/merdice/static/js/2.2ed87113.chunk.js.map",
     "index.html": "/merdice/index.html",
-    "precache-manifest.62083c524d1f0798a2567edeecc15005.js": "/merdice/precache-manifest.62083c524d1f0798a2567edeecc15005.js",
+    "precache-manifest.c8c770c6a2186e9407aaa7ef049d614b.js": "/merdice/precache-manifest.c8c770c6a2186e9407aaa7ef049d614b.js",
     "service-worker.js": "/merdice/service-worker.js",
     "static/css/main.03df00fc.chunk.css.map": "/merdice/static/css/main.03df00fc.chunk.css.map"
   }
