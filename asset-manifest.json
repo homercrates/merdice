@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "esemuu.com/dicefu/static/css/main.03df00fc.chunk.css",
-    "main.js": "esemuu.com/dicefu/static/js/main.eaa6fefb.chunk.js",
-    "main.js.map": "esemuu.com/dicefu/static/js/main.eaa6fefb.chunk.js.map",
-    "runtime~main.js": "esemuu.com/dicefu/static/js/runtime~main.e357cd07.js",
-    "runtime~main.js.map": "esemuu.com/dicefu/static/js/runtime~main.e357cd07.js.map",
-    "static/js/2.2ed87113.chunk.js": "esemuu.com/dicefu/static/js/2.2ed87113.chunk.js",
-    "static/js/2.2ed87113.chunk.js.map": "esemuu.com/dicefu/static/js/2.2ed87113.chunk.js.map",
-    "index.html": "esemuu.com/dicefu/index.html",
-    "precache-manifest.4323aea077d4a37e23ad0a132671883f.js": "esemuu.com/dicefu/precache-manifest.4323aea077d4a37e23ad0a132671883f.js",
-    "service-worker.js": "esemuu.com/dicefu/service-worker.js",
-    "static/css/main.03df00fc.chunk.css.map": "esemuu.com/dicefu/static/css/main.03df00fc.chunk.css.map"
+    "main.css": "/dicefu/static/css/main.03df00fc.chunk.css",
+    "main.js": "/dicefu/static/js/main.87dabe8f.chunk.js",
+    "main.js.map": "/dicefu/static/js/main.87dabe8f.chunk.js.map",
+    "runtime~main.js": "/dicefu/static/js/runtime~main.3eac6ed5.js",
+    "runtime~main.js.map": "/dicefu/static/js/runtime~main.3eac6ed5.js.map",
+    "static/js/2.2ed87113.chunk.js": "/dicefu/static/js/2.2ed87113.chunk.js",
+    "static/js/2.2ed87113.chunk.js.map": "/dicefu/static/js/2.2ed87113.chunk.js.map",
+    "index.html": "/dicefu/index.html",
+    "precache-manifest.0074ea23b0897f3a2b0b4585c1321fe2.js": "/dicefu/precache-manifest.0074ea23b0897f3a2b0b4585c1321fe2.js",
+    "service-worker.js": "/dicefu/service-worker.js",
+    "static/css/main.03df00fc.chunk.css.map": "/dicefu/static/css/main.03df00fc.chunk.css.map"
   }
 }
