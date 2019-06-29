@@ -70,7 +70,7 @@ function RenderTiles() {
                 setPhase(7);
                 setP1Tile(false);
                 setP1Part(true);
-                setCurrentPlayerIs1('player 2');
+                setCurrentPlayerIs1('player 1');
                 break;
             case 7:
                 setPhase(8);

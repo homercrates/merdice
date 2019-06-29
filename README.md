@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Dice Fu 
 ## WIP  react JS 
+try it out at esemuu.com/merdice
 
 ## I have a few more tweaks to make Work In Progress
 
