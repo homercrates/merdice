@@ -17,6 +17,8 @@ function RenderTiles() {
     const [p2Tile, setP2Tile] = useState(false);
     const [p1Part, setP1Part] = useState(false);
     const [p2Part, setP2Part] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
+    const [winner, setWinner] = useState();
 
     let newHand;
     const nextPhase = () => {
@@ -47,10 +49,11 @@ function RenderTiles() {
             case 4:
                 setCurrentPlayerIs1('player 2');
                 checkWin();
-                checkGameOver();
                 setPhase(5);
                 setP1Part(false);
                 setP2Tile(true);
+                setChosenPartTile1(0);
+                setChosenPartTile2(0);
                 break;
             case 5:
                 newHand = player2Hand.filter(hand => hand !== currentTile2);
@@ -78,10 +81,11 @@ function RenderTiles() {
             case 8:
                 setCurrentPlayerIs1('player 1');
                 checkWin();
-                checkGameOver();
                 setPhase(1);
                 setP2Part(false);
                 setP1Tile(true);
+                setChosenPartTile1(0);
+                setChosenPartTile2(0);
                 break;
             default:
                 console.log('default');
@@ -93,6 +97,8 @@ function RenderTiles() {
             || chosenPartTile1 === 2 && chosenPartTile2 === 3
             || chosenPartTile1 === 3 && chosenPartTile2 === 1) {
                 if (advantage2) {
+                    setGameOver(true);
+                    setWinner('player 2');
                     console.log('player 2 wins');
                     console.log('player 2 won the game');
                 } else {
@@ -104,6 +110,8 @@ function RenderTiles() {
             || chosenPartTile2 === 2 && chosenPartTile1 === 3
             || chosenPartTile2 === 3 && chosenPartTile1 === 1) {
                 if (advantage1) {
+                    setGameOver(true);
+                    setWinner('player 1');
                     console.log('player 1 wins');
                     console.log('player 1 won the game');
                 } else {
@@ -117,12 +125,8 @@ function RenderTiles() {
 
     }
 
-    const checkGameOver = () => {
-        return 
-    }
-
     return (
-        <div>
+        <div> { gameOver ? <div>{winner} wins.  Refresh browser to play again</div> :
             <table>
                 <thead>
                     <tr>
@@ -162,7 +166,8 @@ function RenderTiles() {
                         <td>
                             <div>
                                 <div className="submitBtn" onClick={nextPhase}>Submit Move</div>
-                                <p>current Players turn: {currentPlayerIs1} </p>
+                                <p>current Players turn</p>
+                                <p>{currentPlayerIs1} </p>
                             </div>
                         </td>
                         <td className={p2Tile ? "outlineMove" : null}>
@@ -206,8 +211,15 @@ function RenderTiles() {
                         </td>
                         <td>
                             <div>
-                                <p> player 1 Move: {chosenPartTile1}</p>
-                                <p> player 2 Move: {chosenPartTile2}</p>
+                                
+                                {
+                                    chosenPartTile1 === 0 ? null : 
+                                        <img src={require(`../assets/${chosenPartTile1}.png`)} alt="choice" />
+                                },
+                                {
+                                    chosenPartTile2 === 0 ? null : 
+                                    <img src={require(`../assets/${chosenPartTile2}.png`)} alt="choice" />
+                                }
                             </div>
                         </td>
                         <td className={p2Part ? "outlineMove" : null}>
@@ -230,6 +242,7 @@ function RenderTiles() {
                     </tr>
                 </tbody>
             </table>
+        }
         </div>
     )
 }

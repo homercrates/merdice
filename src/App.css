@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -34,14 +38,16 @@
 }
 
 .outlineAdv {
-  border: 2px solid #282c34;
+  border: 2px solid #444;
+  border-radius: .5vh;
   outline-style: double;
   outline-color: rgb(163, 75, 214);
 }
 
 .outlineMove {
-  border: 2px solid #54008b;
-  box-shadow: 0 0 5vh -4px rgba(69, 11, 122, 0.603);
+  border: 1px solid #54008b;
+  box-shadow: 0 0 10vh -4px rgba(69, 11, 122, 0.803);
+  border-radius: 1vh
 }
 
 .submitBtn {
@@ -56,6 +62,6 @@
   text-align: center;
 }
 .submitBtn:active {
-  color:red;
+  color:purple;
   box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
 }
