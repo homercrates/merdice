@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06fb06096ad2c4cb6bb4de5ad32a420a",
+    "revision": "09ea511a269ed3fa8aac0fe5832704bd",
     "url": "/merdice/index.html"
   },
   {
-    "revision": "3dc3cfcd8ef3e768489d",
+    "revision": "1e0d6846f56cb1e4a8d5",
     "url": "/merdice/static/css/main.03df00fc.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/merdice/static/js/2.2ed87113.chunk.js"
   },
   {
-    "revision": "3dc3cfcd8ef3e768489d",
-    "url": "/merdice/static/js/main.bfc7944a.chunk.js"
+    "revision": "1e0d6846f56cb1e4a8d5",
+    "url": "/merdice/static/js/main.aee0d9d8.chunk.js"
   },
   {
     "revision": "9074c9ef7cac564bcb4e",
