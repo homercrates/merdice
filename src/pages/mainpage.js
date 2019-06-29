@@ -1,7 +1,6 @@
 import React from 'react';
 
 import RenderTiles from '../components/renderTiles';
-import DiceComponent from '../components/diceComponent';
 
 
 function MainPage() {

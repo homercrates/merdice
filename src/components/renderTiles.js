@@ -99,12 +99,9 @@ function RenderTiles() {
                 if (advantage2) {
                     setGameOver(true);
                     setWinner('player 2');
-                    console.log('player 2 wins');
-                    console.log('player 2 won the game');
                 } else {
                     setAdvantage2(true);
                     setAdvantage1(false);
-                    console.log('player 2 won this round');
                 }
         } else if (chosenPartTile2 === 1 && chosenPartTile1 === 2 
             || chosenPartTile2 === 2 && chosenPartTile1 === 3
@@ -112,12 +109,9 @@ function RenderTiles() {
                 if (advantage1) {
                     setGameOver(true);
                     setWinner('player 1');
-                    console.log('player 1 wins');
-                    console.log('player 1 won the game');
                 } else {
                     setAdvantage1(true);
                     setAdvantage2(false);
-                    console.log('player 1 won this round');
                     }
         } else {
             console.log('draw match')
