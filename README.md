@@ -1,9 +1,12 @@
 # merdice
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## WIP  react JS 
+## WIP  react JS  
+## Hosted currently at:
+www.esemuu.com/merdice
 
 ## I have a few more tweaks to make Work In Progress
+
 
 ## dice / domino style game meant to represent a kung fu type fight
 Grab beats Block.  Block beats Strike, Stike beats Grab.
